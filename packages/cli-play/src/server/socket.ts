@@ -2,7 +2,6 @@ import {existsSync} from 'fs';
 import http from 'http';
 import fs from 'fs/promises';
 import chokidar from 'chokidar';
-// @ts-expect-error
 import {Server, Socket} from 'socket.io';
 import {resolveCasePath} from '../utils/path.js';
 import {parseMarkdownToCases} from '../utils/case.js';
@@ -40,7 +39,6 @@ export default (componentModulePath: string): void => {
         9998,
         () => io.on(
             'connection',
-            // @ts-expect-error
             socket => setupSocket(socket, watch)
         )
     );
