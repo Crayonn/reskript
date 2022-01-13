@@ -928,6 +928,7 @@ importers:
 
   packages/plugin-qiankun:
     specifiers:
+      '@reskript/core': 3.0.2
       '@reskript/settings': 3.0.2
       '@types/dedent': ^0.7.0
       '@types/jest': ^27.0.3
@@ -941,6 +942,7 @@ importers:
       typescript: 4.6.0-dev.20220105
       webpack-dev-server: ^4.7.1
     dependencies:
+      '@reskript/core': link:../core
       '@reskript/settings': link:../settings
       dedent: 0.7.0
       esbuild: 0.14.11

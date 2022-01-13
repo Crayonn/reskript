@@ -1,5 +1,7 @@
 import {build, BuildOptions} from 'esbuild';
+// @ts-expect-error
 import dedent from 'dedent';
+import {dirFromImportMeta} from '@reskript/core';
 
 const content = (appName: string) => dedent`
     import {registerMicroApps, start} from 'qiankun';
@@ -20,7 +22,7 @@ export default async (appName: string) => {
     const options: BuildOptions = {
         stdin: {
             contents: content(appName),
-            resolveDir: __dirname,
+            resolveDir: dirFromImportMeta(import.meta.url),
         },
         bundle: true,
         format: 'iife',
