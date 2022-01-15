@@ -1,4 +1,4 @@
-import {lint, LintResult as StyleLintResult, Warning, WarningOptions} from 'stylelint';
+import styleLint, {LintResult as StyleLintResult, Warning, WarningOptions} from 'stylelint';
 import {isEmpty} from 'ramda';
 import {ESLint, Linter} from 'eslint';
 import {resolveCacheLocation} from '@reskript/core';
@@ -68,6 +68,6 @@ export default async (files: string[], cmd: ResolveOptions): Promise<LintResult[
         cache: false,
         cacheLocation: await resolveCacheLocation('stylelint'),
     };
-    const report = await lint(lintConfig);
+    const report = await styleLint.lint(lintConfig);
     return report.results.map(adaptStyleResultToScriptResult);
 };

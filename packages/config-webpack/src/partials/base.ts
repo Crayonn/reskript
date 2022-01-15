@@ -6,9 +6,8 @@ import {map} from 'ramda';
 import {compact, dirFromImportMeta, resolveSync, findGitRoot, pMap} from '@reskript/core';
 import {paramCase} from 'change-case';
 import webpack, {EntryObject} from 'webpack';
-// @ts-expect-error
-import resolveTypeScriptPluginExports from 'resolve-typescript-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ResolveTypeScriptPlugin from 'resolve-typescript-plugin';
+import miniCssExtractPluginExports from 'mini-css-extract-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import StyleLintPlugin from 'stylelint-webpack-plugin';
 import InterpolateHTMLPlugin from '@reskript/webpack-plugin-interpolate-html';
@@ -18,7 +17,7 @@ import {createHTMLPluginInstances} from '../utils/html.js';
 import {convertToWebpackEntry} from '../utils/entry.js';
 import * as rules from '../rules/index.js';
 
-const {default: ResolveTypeScriptPlugin} = resolveTypeScriptPluginExports;
+const {default: MiniCssExtractPlugin} = miniCssExtractPluginExports;
 
 const {DefinePlugin, ContextReplacementPlugin} = webpack;
 
