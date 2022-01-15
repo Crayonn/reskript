@@ -1,8 +1,7 @@
-import {compact} from 'lodash';
 import ora from 'ora';
 import {execa} from 'execa';
 import padStream from 'pad-stream';
-import {isInDebugMode} from '@reskript/core';
+import {isInDebugMode, compact} from '@reskript/core';
 import {UserOptions} from '../interface.js';
 
 const PACKAGE_MANAGER_INSTALL_COMMAND: Record<string, [string, string]> = {
