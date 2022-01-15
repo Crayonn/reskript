@@ -18,7 +18,7 @@ import {deprecatedWarn} from './deprecate.js';
 import {pFilter, pMap, pReduce} from './async.js';
 import {resolveFrom, resolveSync, dirFromImportMeta, importUserModule} from './resolve.js';
 import {GitStatusResult, gitStatus} from './git/index.js';
-import {compact} from './lang';
+import {compact} from './lang.js';
 
 export {
     CommandDefinition,

@@ -1,5 +1,6 @@
 import path from 'path';
 import {promises as fs} from 'fs';
+import {globby} from 'globby';
 import pLimit from 'p-limit';
 import {highlight} from 'cli-highlight';
 import babel, {TransformOptions} from '@babel/core';
@@ -46,7 +47,6 @@ const transformFile = async (file: string, baseIn: string, baseOut: string, opti
 };
 
 const transformDirectory = async (dir: string, out: string, options: TransformOptions) => {
-    const {globby} = await import('globby');
     const files = await globby(`${dir.replace(/\/$/, '')}/**/*.{js,jsx,ts,tsx}`);
     await Promise.all(files.map(f => transformFile(f, dir, out, options)));
 };
@@ -69,8 +69,6 @@ const printInConsole = (code: string | null | undefined) => {
 };
 
 export const run = async (cmd: BabelCommandLineArgs, file: string): Promise<void> => {
-    const {globby} = await import('globby');
-
     if (!file) {
         return;
     }

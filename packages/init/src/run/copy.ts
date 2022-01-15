@@ -1,14 +1,13 @@
 import path from 'path';
 import {existsSync} from 'fs';
 import fs from 'fs/promises';
+import {globby} from 'globby';
 import ora from 'ora';
 import {dirFromImportMeta} from '@reskript/core';
 import {UserOptions} from '../interface.js';
 
 
 export default async (cwd: string, options: UserOptions) => {
-    const {globby} = await import('globby');
-
     const spinner = ora('Copying initial files');
     spinner.start();
 

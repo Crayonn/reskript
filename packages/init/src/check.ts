@@ -1,4 +1,5 @@
 import path from 'path';
+import {globby} from 'globby';
 import {logger} from '@reskript/core';
 
 const ALLOWED_EXISTING_FILES = new Set([
@@ -14,7 +15,6 @@ const ALLOWED_EXISTING_FILES = new Set([
 ]);
 
 const checkDirectoryHasTooManyFiles = async (cwd: string) => {
-    const {globby} = await import('globby');
     const files = await globby(`${cwd}/**`, {dot: true, onlyFiles: false, deep: 1});
 
     if (files.length > ALLOWED_EXISTING_FILES.size) {

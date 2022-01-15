@@ -1,4 +1,5 @@
 import path from 'path';
+import {globby} from 'globby';
 import {findGitRoot} from '@reskript/core';
 import {ResolveOptions} from './interface.js';
 
@@ -14,7 +15,6 @@ export const resolveLintFiles = async (
     files: string[],
     {staged, changed, gitStatus}: ResolveOptions
 ): Promise<string[]> => {
-    const {globby} = await import('globby');
     const extensions = TYPE_TO_EXTENSIONS[type];
 
     if (staged || changed) {
