@@ -29,7 +29,8 @@ export default async (appName: string) => {
         write: false,
         sourcemap: false,
         define: {
-            'process.env.NODE_ENV': '"development"',
+            // 为了避免在UT的时候被`vitest`给替换成`"test": '"development"'`这样子，增加一些动态计算
+            ['0process.env.NODE_ENV0'.slice(1, -1)]: '"development"',
         },
     };
     const bundle = await build(options);

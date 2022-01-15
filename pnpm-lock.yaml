@@ -472,7 +472,6 @@ importers:
       '@types/imagemin-gifsicle': ^7.0.1
       '@types/imagemin-mozjpeg': ^8.0.1
       '@types/imagemin-optipng': ^5.2.1
-      '@types/jest': ^27.0.3
       '@types/node': ^17.0.4
       '@types/resolve': ^1.20.1
       eslint: ^8.6.0
@@ -483,6 +482,7 @@ importers:
       img-loader: ^3.0.2
       resolve: ^1.20.0
       typescript: 4.6.0-dev.20220105
+      webpack: ^5.65.0
     dependencies:
       imagemin: 7.0.1
       imagemin-gifsicle: 7.0.0
@@ -494,11 +494,11 @@ importers:
       '@types/imagemin-gifsicle': 7.0.1
       '@types/imagemin-mozjpeg': 8.0.1
       '@types/imagemin-optipng': 5.2.1
-      '@types/jest': 27.4.0
       '@types/node': 17.0.8
       '@types/resolve': 1.20.1
       eslint: 8.6.0
       typescript: 4.6.0-dev.20220105
+      webpack: 5.66.0
 
   packages/config-jest:
     specifiers:
@@ -619,6 +619,7 @@ importers:
       '@babel/core': ^7.16.5
       '@ecomfe/class-names-loader': ^2.0.0
       '@reskript/config-babel': 3.0.2
+      '@reskript/config-img-loader': 3.0.2
       '@reskript/config-lint': 3.0.2
       '@reskript/core': 3.0.2
       '@reskript/less-safe-loader': 3.0.2
@@ -720,6 +721,7 @@ importers:
       workbox-webpack-plugin: 6.4.2_webpack@5.66.0
       worker-loader: 3.0.8_webpack@5.66.0
     devDependencies:
+      '@reskript/config-img-loader': link:../config-img-loader
       '@types/cssnano': 5.0.0
       '@types/less': 3.0.3
       '@types/mini-css-extract-plugin': 2.4.0
@@ -931,15 +933,15 @@ importers:
       '@reskript/core': 3.0.2
       '@reskript/settings': 3.0.2
       '@types/dedent': ^0.7.0
-      '@types/jest': ^27.0.3
       '@types/node': ^17.0.4
+      c8: ^7.10.0
       dedent: ^0.7.0
       esbuild: ^0.14.8
       eslint: ^8.6.0
-      jest: ^27.4.5
       qiankun: ^2.6.3
-      ts-jest: ^27.1.2
       typescript: 4.6.0-dev.20220105
+      vite: ^2.7.7
+      vitest: ^0.0.115
       webpack-dev-server: ^4.7.1
     dependencies:
       '@reskript/core': link:../core
@@ -950,12 +952,12 @@ importers:
       webpack-dev-server: 4.7.3
     devDependencies:
       '@types/dedent': 0.7.0
-      '@types/jest': 27.4.0
       '@types/node': 17.0.8
+      c8: 7.11.0
       eslint: 8.6.0
-      jest: 27.4.7
-      ts-jest: 27.1.2_302e56b6f3618a56cf006d3172836099
       typescript: 4.6.0-dev.20220105
+      vite: 2.7.10
+      vitest: 0.0.115_c8@7.11.0+vite@2.7.10
 
   packages/plugin-sass:
     specifiers:
@@ -16525,41 +16527,6 @@ packages:
   /trough/1.0.5:
     resolution: {integrity: sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==}
     dev: false
-
-  /ts-jest/27.1.2_302e56b6f3618a56cf006d3172836099:
-    resolution: {integrity: sha512-eSOiJOWq6Hhs6Khzk5wKC5sgWIXgXqOCiIl1+3lfnearu58Hj4QpE5tUhQcA3xtZrELbcvAGCsd6HB8OsaVaTA==}
-    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
-    hasBin: true
-    peerDependencies:
-      '@babel/core': '>=7.0.0-beta.0 <8'
-      '@types/jest': ^27.0.0
-      babel-jest: '>=27.0.0 <28'
-      esbuild: ~0.14.0
-      jest: ^27.0.0
-      typescript: '>=3.8 <5.0'
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@types/jest':
-        optional: true
-      babel-jest:
-        optional: true
-      esbuild:
-        optional: true
-    dependencies:
-      '@types/jest': 27.4.0
-      bs-logger: 0.2.6
-      esbuild: 0.14.11
-      fast-json-stable-stringify: 2.1.0
-      jest: 27.4.7
-      jest-util: 27.4.2
-      json5: 2.2.0
-      lodash.memoize: 4.1.2
-      make-error: 1.3.6
-      semver: 7.3.5
-      typescript: 4.6.0-dev.20220105
-      yargs-parser: 20.2.9
-    dev: true
 
   /ts-jest/27.1.2_e73e9da3c5fd460fb2dd381d0863ff42:
     resolution: {integrity: sha512-eSOiJOWq6Hhs6Khzk5wKC5sgWIXgXqOCiIl1+3lfnearu58Hj4QpE5tUhQcA3xtZrELbcvAGCsd6HB8OsaVaTA==}
