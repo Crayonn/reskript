@@ -6,8 +6,8 @@ const factory: LoaderFactory = async ({mode}) => {
     }
 
     try {
-        const {default: loader} = await import('@reskript/config-img-loader');
-        return loader;
+        const {default: loaderFactory} = await import('@reskript/config-img-loader');
+        return loaderFactory();
     }
     catch {
         return null;

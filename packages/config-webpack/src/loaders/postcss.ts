@@ -1,4 +1,4 @@
-import {resolveSync, compact, resolveFrom} from '@reskript/core';
+import {resolve, compact, resolveFrom} from '@reskript/core';
 import postCSS from 'postcss';
 // import tailwind from 'tailwindcss';
 import presetEnv from 'postcss-preset-env';
@@ -21,7 +21,7 @@ const factory: LoaderFactory = async ({mode, projectSettings}) => {
     ];
 
     return {
-        loader: resolveSync('postcss-loader'),
+        loader: await resolve('postcss-loader'),
         options: {
             sourceMap: extract,
             implementation: postCSS,
